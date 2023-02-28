@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="refresh" content="5"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>111111111</h1>
+</body>
+<script>
+
+    // function foo(){
+    //     console.log(this);
+    //     console.log(...arguments);
+    // }
+    // foo(1,2,3,45)
+    // function foo(){
+    //     return (a)=>{
+    //         console.log(this.a);
+    //     }
+    // }
+
+    // var obj1 = {
+    //     a:2
+    // };
+
+    // var obj2 ={
+    //     a:3
+    // };
+
+    // var bar = foo.call(obj1);
+    // bar.call(obj2)
+
+
+
+
+    // Function.prototype.myBind = function(context,...args){
+    //     const  _this = this;
+    //     return function F(){
+    //         if(_this instanceof F){
+    //             console.log(...arguments);
+    //             return new _this(...args,...arguments)
+    //         }
+    //         console.log(...arguments);
+    //         return _this.apply(context,args.concat(...arguments))
+    //     }
+    // }
+    // var me = {
+    //     name:'icon'
+    // }
+    // function showName(n,x){
+    //     console.log(this.name,n,x);
+    // }
+
+    // const f = showName.myBind(me,5,"aaa")
+    // f()
+
+
+
+
+    // Function.prototype.myCall = function(context,...args){
+        
+    //     console.log(this);
+    //     context.func = this;
+    //     context.func(...args)
+    //     delete context.func
+    // }
+
+    // var me = {
+    //     name:'icon'
+    // }
+    // function showName(n,x){
+    //     console.log(this.name,n,x);
+    // }
+
+    // showName.myCall(me,5,"aaa")
+
+    // var name = 'win'
+    // function foo() {
+    //     console.log(this.name);
+    // }
+    // var obj1 = {
+    //     name:"1"
+    // }
+    // var obj2 = {
+    //     name:"2"
+    // }
+    // foo.bind(obj1)
+    // foo.call(obj2)
+
+    // new foo()
+
+    // console.log(Object.create(null));
+
+    // function foo(a, b) {
+        // console.log("a:" + a + ",b:" + b);
+    // }
+
+    // foo.apply(null,[2,3])
+    // var bar = foo.bind(null, 2);
+    // bar(3);
+
+    // function foo(p1,p2){
+        // this.val = p1+p2
+        // console.log(this);
+    // }
+    // var bar = foo.bind(null,"p1")
+    // var baz = new bar("p2")
+    // console.log(baz);
+
+    // var MyModules = (function Manager() {
+    //     var modules = {};
+    //     // name:"bar",deps:[],impl:fun
+    //     function define(name, deps, impl) {
+    //         for (var i = 0; i < deps.length; i++) {
+    //             // debugger
+    //             deps[i] = modules[deps[i]];
+    //         }
+    //         modules[name] = impl.apply(impl, deps);
+    //         // console.log(modules);
+    //     }
+    //     function get(name) {
+    //         return modules[name];
+    //     }
+    //     return {
+    //         define: define,
+    //         get: get
+    //     }
+    // }());
+
+
+    // MyModules.define("bar",[],function(){
+    //     function hello(who){
+    //         return "Let me introduce:"+who;
+    //     }
+    //     return {
+    //         hello:hello
+    //     }
+    // })
+    // MyModules.define("foo", ['bar'], function (bar) {
+    //     var hungry = "hippo";
+    //     function awesome() {
+    //         console.log(bar.hello(hungry).toUpperCase());
+    //     }
+    //     return {
+    //         awesome: awesome
+    //     }
+    // })
+
+    // var bar = MyModules.get("bar");
+    // var foo = MyModules.get("foo");
+    // console.log(
+    //     bar.hello("hippo")
+    // );
+    // foo.awesome();
+
+
+
+</script>
+
+</html>
