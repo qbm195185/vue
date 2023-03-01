@@ -15,11 +15,263 @@
 </body>
 <script>
 
-    for(let i=0;i<=5;i++){
-        setTimeout(() => {
-           console.log(i); 
-        }, i*1000);
+    var anotherObject = {
+        a:2
     }
+    Object.defineProperty(anotherObject,"a",{
+        set a(val){
+            console.log(val);
+            this._a_ = val
+        }
+    })
+    var myObject = Object.create(anotherObject)
+    myObject.a = 3
+    // for (const key in myObject) {
+    //     console.log(key);
+    // }
+    // console.log(anotherObject.a);
+    console.log();
+
+
+
+
+
+    // function Foo(name){
+    //     this.name = name;
+    // }
+    // Foo.prototype.myName = function(){
+    //     return this.name;
+    // }
+    // function Bar(name,label){
+    //     console.log(this);
+    //     Foo.call(this,name);
+    //     this.label = label;
+    // }
+    // Bar.prototype = Object.create(Foo.prototype);
+    // Bar.prototype.myLabel = function(){
+    //     return this.label;
+    // }
+    // var a = new Bar("a","obj a");
+    // console.log(a.myName());
+    // console.log(a.myLabel());
+
+    // function foo() {
+    //     let aa =11;
+    // }
+
+    // console.log(foo.prototype);
+
+    // var anotherObject = {
+    //     a:2
+    // }
+    // var myObject = Object.create(anotherObject)
+    // console.log(anotherObject.a);
+    // console.log(myObject.a);
+
+
+
+    // Object.prototype.boo = 11
+    // Object.defineProperty(Object.prototype,"boo",{
+    //     writable:false,
+    //     configurable:false,
+    //     enumerable:false
+    // })
+    // var myobj = {
+    //     aoo:122
+    // }
+    // myobj.boo = 22;
+    // console.log(myobj['prototype']);
+
+    // var myArray = [1,2,3,4,5]
+    // var it = myArray[Symbol.iterator]()
+    // console.log(it.next());
+
+    // Object.prototype.b = 0
+
+    // var obj = {
+    //     a:1
+    // }
+    // console.log(obj.hasOwnProperty("a"));  
+
+    // var myObject = {
+    //     get a(){
+    //         return this._a_;
+    //     },
+    //     set a(val){
+    //         this._a_ = val;
+    //     }
+    // }
+    
+    // Object.defineProperty(myObject,"b",{
+    //     get:function(){return this.a*2},
+    //     enumerable:true
+    // })
+    // myObject.a = 2;
+    // console.log(myObject.a);
+    // console.log(myObject.b);
+
+
+
+    // const obj = {
+    //     a:1,
+    //     b:2
+    // }
+    // Object.defineProperty(obj,"a",{
+    //     value:"10",
+    //     writable:false,
+    //     configurable:false,
+    //     enumerable:true
+    // })
+    // Object.preventExtensions(obj)
+    // obj.c = 3;
+    // for (const iterator in obj) {
+    //     console.log(iterator,obj[iterator]);
+    // }
+    // Object.defineProperty(obj,"a",{
+    //     value:"10",
+    //     writable:true,
+    //     configurable:false,
+    //     enumerable:true
+    // })
+
+
+    // function anotherFunction(){}
+    // var anotherObject = {
+    //     c:true
+    // }
+    // var anotherArray = []
+    // var myObject = {
+    //     a:2,
+    //     b:anotherObject,
+    //     c:anotherArray,
+    //     d:anotherFunction
+    // }
+    // anotherArray.push(anotherObject,myObject)
+
+    // console.log(JSON.stringify(anotherObject));
+
+    // var arr = [1,2,3,4,5]
+    // console.log(arr[10] instanceof Object);
+
+    // var myObject = {
+    //     a:2
+    // }
+    // var idx;
+    // if(wantA){
+    //     idx="a"
+    // }
+    // console.log(myObject[idx]);
+
+
+    // function outer(...n){
+    //     let sum=0;
+    //     function inner(...args){
+    //         console.log(args);
+    //         if(args.length==0){
+    //             return sum;
+    //         }
+    //         for(let i=0;i<args.length;i++){
+    //             sum = sum + arguments[i];
+    //         }
+    //         return inner;
+    //     }
+    //     return inner(...n);
+    // }
+
+    // console.log(outer(1,2,3)(4,5)());
+    
+    // function foo(){
+    //     console.log(this);
+    //     console.log(this.a);
+    // }
+    // var obj = {
+    //     a:2
+    // }
+    // var obj2 = {
+    //     a:5
+    // }
+
+    // foo.call(obj)
+    // foo.call(obj2)
+    // foo()
+
+    // var bar = function(){
+    //     foo.call(obj);
+    // }
+    // bar();
+    // setTimeout(bar, 100);
+    // var a=10
+    // bar.call(Window)
+
+    // function foo(){
+    //     console.log(this.a);
+    // }
+    // var obj = {
+    //     a:5,
+    //     fun:foo
+    // }
+    // var a = 2;
+    // obj.fun()
+    // foo()
+
+
+    // function foo(){
+    //     var a=2;
+    //     this.bar();
+    // }
+    // function bar(){
+    //     console.log(this);
+    //     console.log(this.a);
+    // }
+    // foo()
+
+    // setTimeout(function timer(){
+    //     timer.count = 5;
+    //     console.log(timer.count);
+    // },100)
+
+    // timer()
+
+    // foo.count = 5;
+    // foo(5)
+    // function foo(num){
+    //     console.log("foo:"+num);
+    //     console.log(this.count);
+    // }
+
+    
+
+    
+
+    // var obj = {
+    //     id:"awsome",
+    //     cool:function coolFn(){
+    //         console.log(this);
+    //         var self = this
+    //         console.log(self.id);
+    //     }
+    // };
+    // var id = "not awesome";
+    // obj.cool();
+    // setTimeout(obj.cool, 100);
+
+    // function foo(){
+    //     console.log(this);
+    //     console.log(a);
+    // }
+    // function bar(){
+    //     var a = 3;
+    //     foo();
+    // }
+    // var a=2;
+    // bar();
+
+
+    // for(let i=0;i<=5;i++){
+    //     setTimeout(() => {
+    //        console.log(i); 
+    //     }, i*1000);
+    // }
 
     // for(var i=1;i<=5;i++){
     //     (function(){
