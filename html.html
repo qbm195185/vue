@@ -6,31 +6,401 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- <meta http-equiv="refresh" content="5"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script> -->
     <title>Document</title>
+    <!-- <script src="./echarts.js"></script> -->
 </head>
-
+    
 <body>
-    <h1>111111111</h1>
+    <div class="container">
+        <div class="main">
+            <div class="mm">zhong</div>
+        </div>
+        <div class="l">left</div>
+        <div class="r">right</div>
+    </div>
 </body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        width: 100vw;
+        height: 100vh;
+    }
+    .container > div{
+        float: left;
+    }
+    .l{
+        margin-left: -100%;
+        width: 200px;
+        height: 100vh;
+        background-color: blue;
+    }
+    .r{
+        width: 200px;
+        height: 100vh;
+        background-color: green;
+        margin-left: -200px;
+    }
+    .main{
+        width: 100%;
+        height: 100vh;
+        background-color: red;
+    }
+    .mm{
+        padding: 0 200px;
+    }
+</style>
 <script>
 
-    var anotherObject = {
-        a:2
-    }
-    Object.defineProperty(anotherObject,"a",{
-        set a(val){
-            console.log(val);
-            this._a_ = val
-        }
-    })
-    var myObject = Object.create(anotherObject)
-    myObject.a = 3
-    // for (const key in myObject) {
-    //     console.log(key);
+    
+
+    // let str = "abc"
+    // function fun1(params) {
+    //     for(let i=0;i<str.length;i++){
+    //         if(!params.includes(str[i])){
+    //             params = params+str[i]
+    //             fun1(params)
+    //         }
+    //     }
     // }
-    // console.log(anotherObject.a);
-    console.log();
+
+
+    // var obj = {
+    //     fun1:"",
+    //     fun2:""
+    // }
+    // var fun1 = new Promise(function(resolve,reject){
+    //     setTimeout(() => {
+    //         obj.fun1 = "1"
+    //        resolve(1)
+    //     }, 3000);
+    // })
+    // var fun2 = new Promise(function(resolve,reject){
+    //     setTimeout(() => {
+    //         obj.fun2 = "2"
+    //        resolve(2)
+    //     }, 5000);
+    // })
+    // Promise.all([fun1,fun2]).then(function(val){
+    //     console.log(obj);
+    //     console.log(val);
+    //     // return new Promise(function(resolve,reject){
+    //     //     setTimeout(()=>{
+    //     //         // resolve(3)
+    //     //         return 3
+    //     //     },1000)
+    //     // })
+    //     return 5
+    // }).then((val)=>{
+    //     console.log(val);
+    // },function(val){
+    //     console.log(val);
+    // })
+
+
+
+
+    // console.log(Promise.resolve(42));
+    // console.log(Promise.reject(20).then(null,function(err){
+    //     console.log(err);
+    // }).then(null,function(err){
+    //     console.log(err);
+    // }));
+
+
+    // function fun(n){
+    //     if(n==1){
+    //         return 1
+    //     }
+    //     return n*fun(n-1)
+    // }
+    // console.log(fun(5));
+
+    // var stt = 0
+    // function fun(n){
+    //     // debugge
+    //     if(n<0) return
+    //     if(n==0){
+    //         stt++
+    //         // console.log(1);
+    //         return
+    //     }
+    //     fun(n-2)
+    //     fun(n-1)
+    // }
+    // fun(20)
+    // console.log(stt);
+
+    // function fun(f1,f2,m){
+    //     if (f1+f2<m) {
+    //         console.log(f1+f2);
+    //         fun(f2,f1+f2,m)
+    //     }
+    // }
+    // fun(0,1,100)
+
+
+    // function funn(str){
+    //     // let str = "abc"
+    //     function fun(s){
+    //         if(str.length === s.length){
+    //             return console.log(s);
+    //         }
+    //         for(let i=0;i<str.length;i++){
+    //             if(!s.includes(str[i])){
+    //                 s = s+str[i]
+    //                 fun(s)
+    //             }
+    //         }
+    //     }
+    //     for(let i=0;i<str.length;i++){
+    //         fun(str[i])
+
+    //     }
+    // }
+    
+
+    // var perm = function(s){
+    //     var result = [];
+    //     if(s.length<=1){
+    //         return [s]
+    //     }else{
+    //         for(var i=0;i<s.length;i++){
+    //             var c = s[i];
+    //             var newStr = s.slice(0,i) + s.slice(i+1,s.length);
+    //             var l = perm(newStr)
+    //             for(var j=0;j<l.length;j++){
+    //                 var temp = c+l[j];
+    //                 result.push(temp)
+    //             }
+    //         }
+    //     }
+    //     return result
+    // }
+    // console.log(perm("123"));
+
+    // var  p = Promise.resolve(21)
+    // var a = p.then(()=>{
+    //     // return 1
+    //     console.log(1);
+    // })
+    // a.then((val)=>{
+    //     // console.log(this);
+    //     console.log(val);
+    // })
+
+    // var myChart = echarts.init(document.getElementById('main'),'dark');
+    // var option = {
+    //     title: {
+    //       text: 'ECharts 入门示例'
+    //     },
+    //     tooltip: {},
+    //     legend: {
+    //       data: ['销量']
+    //     },
+    //     xAxis: {
+    //       data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+    //     },
+    //     yAxis: {},
+    //     series: [
+    //       {
+    //         name: '销量',
+    //         type: 'bar',
+    //         data: [5, 20, 36, 10, 10, 20]
+    //       }
+    //     ]
+    //   };
+    //   myChart.setOption(option);
+
+    // var a,b=2;
+    // console.log(a);
+
+    // var s1 = setTimeout(()=>{
+    //     console.log("s1");
+    // },10)
+
+    // var s2 = setTimeout(() => {
+    //    console.log("s2"); 
+    //     // return 10;
+    // }, 1);
+    // clearTimeout(s1)
+    // console.log(s1,s2);
+    
+
+    // let i=1;
+    // document.getElementsByTagName('body')[0].onscroll = function(){
+    //     console.log(i++);
+    // }
+
+
+    // function fun(){}
+    // console.log(fun.prototype);
+    // Foo = {
+    //     init:function(who){
+    //         this.me = who
+    //     },
+    //     identify:function(){
+    //         return `i am ${this.me}`
+    //     }
+    // }
+    // Bar = Object.create(Foo)
+    // console.log(Foo);
+    // console.log(fun.constructor.name);
+    // console.log(Bar);
+
+
+
+    // function Foo(who){
+    //     this.me = who
+    // }
+    // Foo.prototype.identify = function(){
+    //     return "i am "+ this.me+"(foo)";
+    // }
+    // function Bar(who){
+    //     Foo.call(this,who)
+    // }
+    // Bar.prototype = Object.create(Foo.prototype);
+    // Bar.prototype.identify = function(){
+    //     return "i am "+ this.me+"(bar)";
+    // }
+    // Bar.prototype.speck = function(){
+    //     alert("hello,"+this.identify()+".");
+    // }
+    // var b1 = new Bar('b1');
+    // var b2 = new Bar('b2');
+    // console.log(Foo.prototype.identify);
+    // console.log(Bar.prototype.identify);
+    // b1.speck();
+    // b2.speck();
+
+
+
+
+
+    // var f1 = {
+    //     lt:function(){
+    //         console.log(this);
+    //     }
+    // }
+    // var f2 = Object.create(f1);
+    // Object.defineProperty(f2,"v",{
+    //     value:5
+    // })
+    // f1.lt()
+    // f2.lt()
+
+    // var obj1 ={a:1}
+    // var obj2 ={}
+    // console.log(Object.create(obj1).a = 5 ,obj1.a);
+
+
+    // function Foo(name){
+    //     this.name = name;
+    // }
+
+    // Foo.prototype.myName = function(){
+    //     return this.name;
+    // }
+    // function Bar(name,label){
+    //     Foo.call(this,name);
+    //     this.label = label
+    // }
+    // Bar.prototype = Object.create(Foo.prototype);
+
+    // Bar.prototype.myLabel = function(){
+    //     return this.label;
+    // }
+    // var a = new Bar('a','bar');
+    // a.myName = function(){
+    //     return 11
+    // }
+    // console.log(a.myName);
+    // console.log(new Foo().myName);
+
+    
+
+    // var obj1 = {
+    //     a:1
+    // }
+    // Object.defineProperty(obj1,"a",{
+    //     writable:false
+    // })
+    // var obj2 = Object.create(obj1)
+    // Object.defineProperty(obj2,"a",{
+    //     value:2
+    // })
+    // console.log(obj1);
+    // console.log(obj2);
+
+
+    // function objNext(obj){
+    //     return Object.defineProperty(obj,Symbol.iterator,{
+    //         enumerable:false,
+    //         writable:false,
+    //         configurable:true,
+    //         value:function(){
+    //             // console.log(this);
+    //             var o = this;
+    //             var idx = 0;
+    //             var ks = Object.keys(o);
+    //             return {
+    //                 next:function(){
+    //                     return {
+    //                         value:o[ks[idx++]],
+    //                         done:(idx>ks.length)
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     })
+    // }
+    // var obj1 = {
+    //     a:1,
+    //     obj:{
+    //         b:222
+    //     }
+    // }
+    // objNext(obj1)
+    // var it = obj1[Symbol.iterator]();
+    // console.log(it.next());
+    // for(var v of obj1){
+    //     console.log(v);
+    // }
+
+    // var obj2 = Object.assign({},obj1)
+    // // var obj2 = obj1
+    // obj2.a = 2;
+    // obj2.obj.b = 333;
+    // console.log(obj1.obj.b,obj1.a);
+
+
+
+    // console.log(typeof JSON.parse(JSON.stringify(obj)));
+
+
+
+    // function fun (){}
+    // console.log(fun instanceof Function);
+
+    // var anotherObject = {
+    //     a:2
+    // }
+    // Object.defineProperty(anotherObject,"a",{
+    //     set a(val){
+    //         console.log(val);
+    //         this._a_ = val
+    //     }
+    // })
+    // var myObject = Object.create(anotherObject)
+    // myObject.a = 3
+    // // for (const key in myObject) {
+    // //     console.log(key);
+    // // }
+    // // console.log(anotherObject.a);
+    // console.log();
 
 
 
